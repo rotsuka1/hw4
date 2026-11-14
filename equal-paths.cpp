@@ -16,14 +16,14 @@ bool checkPaths(Node*root, int d, int& depthOfLeaf){
     }
     if((root->left == NULL)&&(root->right == NULL)){
         if(depthOfLeaf == -1){
-            depthOfLeaf = depth;
+            depthOfLeaf = d;
             return true;
         }
-        return depth == depthOfLeaf;
+        return d == depthOfLeaf;
 
     }
 
-    return checkPaths(root->left, depth + 1, depthOfLeaf) && checkPaths(root->right, depth + 1, depthOfLeaf);
+    return checkPaths(root->left, d + 1, depthOfLeaf) && checkPaths(root->right, d + 1, depthOfLeaf);
 
 }
 
