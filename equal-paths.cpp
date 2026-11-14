@@ -9,10 +9,30 @@ using namespace std;
 
 // You may add any prototypes of helper functions here
 
+bool checkPaths(Node*root, int d, int& depthOfLeaf){
+     
+    if(root == NULL){
+        return true;
+    }
+    if((root->left == NULL)&&(root->right == NULL)){
+        if(depthOfLeaf == -1){
+            depthOfLeaf = depth;
+            return true;
+        }
+        return depth == depthOfLeaf;
+
+    }
+
+    return checkPaths(root->left, depth + 1, depthOfLeaf) && checkPaths(root->right, depth + 1, depthOfLeaf);
+
+}
+
 
 bool equalPaths(Node * root)
 {
     // Add your code below
+   int depthOfLeaf = -1;
+   return checkPaths(root, 0, depthOfLeaf);
 
 }
 
