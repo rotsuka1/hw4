@@ -6,7 +6,9 @@
 #include <cstdlib>
 #include <cstdint>
 #include <algorithm>
+#include <stdexcept>
 #include "bst.h"
+
 
 struct KeyError { };
 

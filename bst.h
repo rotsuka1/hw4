@@ -626,7 +626,7 @@ Node<Key, Value>* BinarySearchTree<Key, Value>::internalFind(const Key& key) con
         if(key < current->getKey()){
             current = current->getLeft();
         }
-        else if(current->getKey()){
+        else if(current->getKey() < key){
             current = current->getRight();
         }
         else{
